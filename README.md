@@ -1,0 +1,13 @@
+# Owl Ferris Sweep
+
+This is a fork of the [Ferris Sweep project](https://github.com/davidphilipbarr/Sweep), which is itself a fork of [Ferris by Pierre Chevalier](https://github.com/pierrechevalier83/ferris) that uses a daughter board like a promicro, elite-c, bit-c, etc. instead of using onboard components.
+
+The main difference I've made here is that I've pulled the Sweep 2.1 version of the board, I've deleted the old silkscreen artwork, and I've added in some owl artwork.
+
+My motivation to build this was heavily inspired by Ben Vallack and his video on the [Ferris Sweep](https://www.youtube.com/watch?v=JqpBKuEVinw) build he made, as well as his videos on various keyboard layouts for 40% keyboards. Build instructions can be found [here](https://www.youtube.com/watch?v=fBPu7AyDtkM_) 
+
+Future plans for this involve:
+- Actually building it once all the parts arrive. I've used Kailh V1 Choc Silver switches, and MBK Choc keycaps in white, as well as two Elite-C controllers, and some extra components (TRRS jack, TRRS cable, usb C cable)
+- 3D print a custom tented mount for the board using the 4-screw puck mount included on the PCB that was originally intended for splitkb's [mounting puck](https://splitkb.com/products/tenting-puck?_pos=1&_psq=tenting%20&_ss=e&_v=1.0)
+- Include assembly instuctions for the mount and flashing instructions for the Elite C microcontrollers
+- Include some photos
