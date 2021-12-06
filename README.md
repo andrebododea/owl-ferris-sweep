@@ -8,8 +8,9 @@ The main difference I've made here is that I've pulled the Sweep 2.1 version of 
 
 ![MicrosoftTeams-image (2)](https://user-images.githubusercontent.com/9446419/143318504-2994da0f-68e2-45f8-aefe-fd5e40d8b8bf.png)
 
+The QMK keymap and configuration is heavily based on [Ben Vallack's 34 key Ferris Sweep layout](https://github.com/benvallack/34-QMK-Ferris-Sweep), with some light modifications. 
 
-My motivation to build this was heavily inspired by Ben Vallack and his video on the [Ferris Sweep](https://www.youtube.com/watch?v=JqpBKuEVinw) build he made, as well as his videos on various keyboard layouts for 40% keyboards. Build instructions for this keyboard can be found [here](https://www.youtube.com/watch?v=fBPu7AyDtkM_) and are what I plan to follow when all parts and PCB's arrive.
+As you can probably tell by now, my motivation to build this was heavily inspired by Ben Vallack and his video on the [Ferris Sweep](https://www.youtube.com/watch?v=JqpBKuEVinw) build he made, as well as his videos on various keyboard layouts for 40% keyboards. Build instructions for this keyboard can be found [here](https://www.youtube.com/watch?v=fBPu7AyDtkM_) and are what I plan to follow when all parts and PCB's arrive.
 
 Future plans for this involve:
 - Actually building it once all the parts arrive. I've used Kailh V1 Choc Silver switches, and MBK Choc keycaps in white, as well as two Elite-C controllers, and some extra components (TRRS jack, TRRS cable, usb C cable)
