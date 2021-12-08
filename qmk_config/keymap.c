@@ -46,9 +46,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //---------------------------------------------------------------------------------------       ----------------------------------------------------------------------------------
     KC_ESCAPE,  KC_AT    ,  KC_HASH   ,TD(DANCE_31)              ,KC_PERC    ,KC_CIRC    ,KC_AMPR   ,KC_ASTR   ,TD(PIPE_END) ,KC_BSPC ,
   //----------------------------------------------------------------------------       ----------------------------------------------------------------------------------
-    KC_TAB, KC_EQL  , KC_TILD, KC_DQUO, TD(DANCE_32)       ,TD(BKSL_HME),LSFT(KC_LBRC),LSFT(KC_RBRC),KC_SCOLON,  KC_ENTER   ,
+    KC_TAB, KC_GRAVE,  KC_DQUO, KC_EQL, TD(DANCE_32)       ,TD(BKSL_HME),LSFT(KC_LBRC),LSFT(KC_RBRC),KC_SCOLON,  KC_ENTER   ,
   //----------------------------------------------------------------------------       ----------------------------------------------------------------------------------
-     KC_UNDO, KC_CUT, KC_COPY, KC_PASTE, LCTL(LSFT(KC_B)),              KC_LBRC     ,KC_LPRN   ,KC_RPRN   ,KC_RBRC   ,TO(3)   ,
+     KC_TILD , KC_CUT, KC_COPY, KC_PASTE, LCTL(LSFT(KC_B)),              KC_LBRC     ,KC_LPRN   ,KC_RPRN   ,KC_RBRC   ,TO(3)   ,
   //---------------------------------------------------------------------------------------       ----------------------------------------------------------------------------------
 		    					TO(0) ,OSM(MOD_LSFT),               KC_RALT      ,TO(2) 
   ), 
