@@ -1,5 +1,7 @@
 # Owl Ferris Sweep
 
+TODO: Re-size all the massive photos to not be as obnoxiously large.
+
 This is a custom-made minimalist keyboard that I have built that aims to provide the following features:
 - Ergonomic keymap that allows the user to not move their hands or stretch to reach positions
 - Aggressive pinky stagger, to promote a neutral hand position
