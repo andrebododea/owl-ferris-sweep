@@ -1,5 +1,11 @@
 # Owl Ferris Sweep
 
+This is a custom-made minimalist keyboard that I have built that aims to provide the following features:
+- Ergonomic keymap that allows the user to not move their hands or stretch to reach positions
+- Aggressive pinky stagger, to promote a neutral hand position
+- Aggressive (50 degree) tenting angle to put the wrist in as neutral of a position as possible
+- Modular - circuit board, base, key switches, and microcontroller can all be swapped around and iterated on as necessary without needing to build a brand new board
+
 This is a fork of the [Ferris Sweep project](https://github.com/davidphilipbarr/Sweep), which is itself a fork of [Ferris by Pierre Chevalier](https://github.com/pierrechevalier83/ferris) that uses a daughter board like a promicro, elite-c, bit-c, etc. instead of using onboard components.
 
 The main difference I've made here is that I've pulled the Sweep 2.1 version of the board, I've deleted the old silkscreen artwork, and I've added in some owl artwork.|
