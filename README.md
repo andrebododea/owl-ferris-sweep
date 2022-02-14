@@ -7,9 +7,9 @@ This is a custom-made minimalist keyboard that I have built that aims to provide
 - Modular - circuit board, base, key switches, and microcontroller can all be swapped around and iterated on as necessary without needing to build a brand new board
 
 
-Here is the finished product. 
+Here is the finished product without the base. Full image with both, and with base attached, coming soon. 
+![PXL_20211207_040718623](https://user-images.githubusercontent.com/9446419/153916336-90c98efe-b418-4c11-bbe6-0bf4a980fe87.jpg)
 
-![PXL_20211207_040718623](https://user-images.githubusercontent.com/9446419/153915993-b4736fd7-83fd-43ab-9d18-a03739950c1b.jpg)![PXL_20211220_222028186](https://user-images.githubusercontent.com/9446419/153915999-9823f309-01d9-4e4f-be0a-315e01717074.jpg)
 
 ## Background
 This is a fork of the [Ferris Sweep project](https://github.com/davidphilipbarr/Sweep), which is itself a fork of [Ferris by Pierre Chevalier](https://github.com/pierrechevalier83/ferris) that uses a daughter board like a promicro, elite-c, bit-c, etc. instead of using onboard components.
