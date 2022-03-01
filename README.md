@@ -10,7 +10,7 @@ This is a custom-made minimalist keyboard that I have built that aims to provide
 
 
 Here is the finished product without the base. Full image with both, and with base attached, coming soon. 
-![PXL_20211207_040718623](https://user-images.githubusercontent.com/9446419/153916336-90c98efe-b418-4c11-bbe6-0bf4a980fe87.jpg)
+<img src="https://user-images.githubusercontent.com/9446419/153916336-90c98efe-b418-4c11-bbe6-0bf4a980fe87.jpg" width="500">
 
 
 ## Background
@@ -32,10 +32,7 @@ I designed a base that has a tenting angle of 50 degrees. The base is the exact 
 
 Here is a study I did where I took a Kinesis Freestyle Pro, propped up to a tenting angle of 50 degrees. You can see the finished product next to the Kinesis, and the advantages of the newly designed keyboard should be clear. When aggressively tenting, a smaller keyboard creates a much smaller desktop footprint than a large keyboard such as the Kinesis.
 
-![PXL_20211213_162854840](https://user-images.githubusercontent.com/9446419/153916070-d8599a45-f276-442f-84eb-2eda478807fd.jpg)
-
-![PXL_20211213_162849478](https://user-images.githubusercontent.com/9446419/153916065-bb2bf104-b76c-4f89-beef-b13d05856d11.jpg)
-
+<< INSERT COMPARISON AGAINST TENTED KINESIS KEYBOARD >>
 
 
 ## PCB Build 
