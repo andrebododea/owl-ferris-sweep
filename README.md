@@ -9,8 +9,10 @@ This is a custom-made minimalist keyboard that I have built that aims to provide
 - Modular - circuit board, base, key switches, and microcontroller can all be swapped around and iterated on as necessary without needing to build a brand new board
 
 
+
 Here is the finished product without the base. Full image with both, and with base attached, coming soon. 
-<img src="https://user-images.githubusercontent.com/9446419/153916336-90c98efe-b418-4c11-bbe6-0bf4a980fe87.jpg" width="500">
+
+<img src="https://user-images.githubusercontent.com/9446419/156084562-7c997dc5-48c9-49e0-af60-a174a4595a0c.jpg" width="600">
 
 
 ## Background
@@ -18,9 +20,9 @@ This is a fork of the [Ferris Sweep project](https://github.com/davidphilipbarr/
 
 The main difference I've made here is that I've pulled the Sweep 2.1 version of the board, I've deleted the old silkscreen artwork, and I've added in some owl artwork.
 
-![MicrosoftTeams-image (1)](https://user-images.githubusercontent.com/9446419/143318466-0a3d0682-bb64-4945-b8ab-bbbacb69f23f.png)
+<img src="https://user-images.githubusercontent.com/9446419/143318466-0a3d0682-bb64-4945-b8ab-bbbacb69f23f.png" width="800">
 
-![MicrosoftTeams-image (2)](https://user-images.githubusercontent.com/9446419/143318504-2994da0f-68e2-45f8-aefe-fd5e40d8b8bf.png)
+<img src="https://user-images.githubusercontent.com/9446419/143318504-2994da0f-68e2-45f8-aefe-fd5e40d8b8bf.png" width="800">
 
 The QMK keymap and configuration is heavily based on [Ben Vallack's 34 key Ferris Sweep layout](https://github.com/benvallack/34-QMK-Ferris-Sweep), with some light modifications. 
 
@@ -28,7 +30,8 @@ As you can probably tell by now, my motivation to build this was heavily inspire
 
 ## Base design
 I designed a base that has a tenting angle of 50 degrees. The base is the exact same for each side aside from being mirrored, and is designed to be 3D printed and then attached to the circuit board via 4x M2 heat set inserts inserted into the base and then attached to four M2 sized holes on the PCB.
-![cad_file](https://user-images.githubusercontent.com/9446419/153913472-b125c9d9-91c1-4504-bf43-197d8bf727ab.png)
+
+<img src="https://user-images.githubusercontent.com/9446419/153913472-b125c9d9-91c1-4504-bf43-197d8bf727ab.png" width="800">
 
 Here is a study I did where I took a Kinesis Freestyle Pro, propped up to a tenting angle of 50 degrees. You can see the finished product next to the Kinesis, and the advantages of the newly designed keyboard should be clear. When aggressively tenting, a smaller keyboard creates a much smaller desktop footprint than a large keyboard such as the Kinesis.
 
