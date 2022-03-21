@@ -60,6 +60,13 @@ Flashed the Elite-C arduino clones with QMK firmware, and then soldered it onto 
 Once the base was printed I aligned the circuit board on the 3D printed base, and marked where the four holes are for the M2 screws. Pushed the heat set inserts into the base where the markings were, and then attached the circuit board to the base via the four M2 screws.
 
 ## Keymap
+This keyboard just uses QMK for the firmware on the board. I wrote a custom keymap, however there is a default keymap that can be used for this keboard
+
+The procedure for re-flashing the keyboard with new firmware (which must be done any time the QMK keymap is desired to be changed) is to put the keyboard into a reset state and then use the QMK flash commend. So to enumerate these:
+1) Connect the keyboard to your PC.
+2) Press the reset button (which is mapped to the keyboard's Layer 2 bottom-left most pinkey key) OR simply short the master Arduino's reset and ground pins together as shown in this diagram
+<img src="https://user-images.githubusercontent.com/9446419/159301616-7d147aae-19a7-4722-9c3e-0f31a73177a2.png" width="800">
+3) In a terminal on the connected PC, run the command `qmk flash`
 
 TODO: QMK keymap incoming
 
