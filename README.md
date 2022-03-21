@@ -51,7 +51,7 @@ Each side of the keyboard contains the following:
 - 17x MBK Choc keycaps
 - 1x TRRS jack 
 - 1x custom 3D printed base
-- 4x M2 
+- 4x M2 heat set inserts
 - 4x M2 screws
 
 ### Assembly Materials
