@@ -17,6 +17,45 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
+/* key matrix size */
+#define MATRIX_ROWS 8
+#define MATRIX_COLS 5
+
+/*
+ * Keyboard Matrix Assignments
+ *
+ * Change this to how you wired your keyboard
+ * COLS: AVR pins used for columns, left to right
+ * ROWS: AVR pins used for rows, top to bottom
+ * DIODE_DIRECTION: COL2ROW = COL = Anode (+), ROW = Cathode (-, marked on diode)
+ *                  ROW2COL = ROW = Anode (+), COL = Cathode (-, marked on diode)
+ *                  NO_DIODE = switches are directly connected to AVR pins
+ *
+*/
+#define DIRECT_PINS { \
+    { E6, F7, F6, F5, F4 }, \
+    { B1, B3, B2, B6, D3 }, \
+    { D1, D0, D4, C6, D7 }, \
+    { B4, B5, NO_PIN, NO_PIN, NO_PIN } \
+}
+
+#define DIRECT_PINS_RIGHT { \
+    { F4, F5, F6, F7, E6 }, \
+    { D3, B6, B2, B3, B1 }, \
+    { D7, C6, D4, D0, D1 }, \
+    { B5, B4, NO_PIN, NO_PIN, NO_PIN } \
+}
+
+#define UNUSED_PINS
+
+#define USE_SERIAL
+/* serial.c configuration for split keyboard */
+#define SOFT_SERIAL_PIN D2
+
+
+// #define MASTER_RIGHT
+// #define EE_HANDS
+
 #define IGNORE_MOD_TAP_INTERRUPT
 #define TAPPING_FORCE_HOLD
 #undef TAPPING_TERM

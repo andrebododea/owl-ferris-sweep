@@ -9,6 +9,7 @@ enum tap_dance_codes {
   DANCE_VS_CODE_SIDEBAR,
   DANCE_COPY,
   DANCE_PASTE,
+  DANCE_VIM_RIGHT_BRACKET,
   DANCE_15,
   DANCE_31,
   DANCE_32,
@@ -18,8 +19,6 @@ enum tap_dance_codes {
   DANCE_56,
   DANCE_57,
   DANCE_58,
-  DANCE_59,
-  DANCE_60,
   DANCE_63,
   BKSL_HME,
   PIPE_END,
@@ -31,48 +30,125 @@ enum tap_dance_codes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT(
-  //---------------------------------------------------------------------------------------       ----------------------------------------------------------------------------------
-      KC_Q,   KC_W,     KC_E,     KC_R,    KC_T,    						KC_Y,   KC_U,   KC_I,  KC_O ,  KC_P,
-  //------------------------------------------------------------------------------       ----------------------------------------------------------------------------
-      KC_A,    KC_S,    MT(MOD_LALT,KC_D),    MT(MOD_LGUI,KC_F),    KC_G,  	KC_H,   MT(MOD_RGUI,KC_J),   MT(MOD_RALT,KC_K),  KC_L,  KC_BSPC,
-  //------------------------------------------------------------------------------       ----------------------------------------------------------------------------
-      KC_Z,   KC_X,  TD(DANCE_COPY),   TD(DANCE_PASTE),  TD(DANCE_VS_CODE_SIDEBAR),     							KC_N,   KC_M,    TD(DANCE_2), TD(DANCE_1), TD(DANCE_3),  
-  //---------------------------------------------------------------------------------------       ----------------------------------------------------------------------------------
-		    					MT(MOD_MEH,KC_SPACE),OSM(MOD_LSFT),      OSM(MOD_RCTL), TO(1)
-  //---------------------------------------------------------------------------------------       ----------------------------------------------------------------------------------
+/* Keymap 0: Basic layer
+ *
+ * ,--------------------------------------------------.           ,--------------------------------------------------.
+ * |-----+------+------+------+------|           |------+------+------+------+------+
+ * |     |      |      |      |      |           |      |      |      |      |      |
+ * |  Q  |   W  |   E  |   R  |   T  |           |   Y  |   U  |   I  |   O  |   P  |
+ * |     |      |      |      |      |           |      |      |      |      |      |
+ * |-----+------+------+------+------|           |------+------+------+------+------+
+ * |     |      | (Alt)| (Win)|      |           |      |      |      |      |      |
+ * |  A  |   S  |   D  |   F  |   G  |           |   H  |   J  |   K  |   L  | Bkspc|
+ * |     |      |      |      |      |           |      |      |      |      |      |
+ * |-----+------+------+------+------|           |------+------+------+------+------+
+ * |     |      |      |      |      |           |      |      |  (-) |  (!) | (_)  |
+ * | Z   |   X  |   C  |   V  |   B  |           |   N  |   M  |   <  |   >  |  ?   |
+ * |     |      |      |      |      |           |      |      |   ,  |   .  |  /   |
+ * `-----+------+------+------+------|           |-------+------+------+------+------'
+ *                       ,-------------.       ,---------------.
+ *                       |  L1  | Shift|       | Ctrl |   L2   |
+ *                       |------|------|       |------+--------+
+ */
+  //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      KC_Q,   KC_W,     KC_E,                 KC_R,                 KC_T,                           KC_Y,          KC_U,                KC_I,               KC_O,        KC_P,
+  //------------------------------------------------------------------------------------------       ----------------------------------------------------------------------------
+      KC_A,   KC_S,     MT(MOD_LALT,KC_D),    MT(MOD_LGUI,KC_F),    KC_G,  	                        KC_H,          KC_J,                KC_K,               KC_L,        KC_BSPC,
+  //------------------------------------------------------------------------------------------       ----------------------------------------------------------------------------
+      KC_Z,   KC_X,     TD(DANCE_COPY),       TD(DANCE_PASTE),      TD(DANCE_VS_CODE_SIDEBAR),      KC_N,          KC_M,                TD(DANCE_2),        TD(DANCE_1), TD(DANCE_3),  
+  //-----------------------------------------------------------------------------------------       ----------------------------------------------------------------------------------
+		    					              MT(MOD_MEH,KC_SPACE), OSM(MOD_LSFT),                  OSM(MOD_RCTL), TO(1)
+  //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   ),
-
+/* Keymap 1: Symbol layer
+ *
+ * ,--------------------------------------------------.           ,--------------------------------------------------.
+ * |-----+------+------+------+------|           |------+------+------+------+------+
+ * |     |      |      |      |      |           |      |      |      |      |      |
+ * | Esc |  @   |   #  |   $  |   %  |           |   ^  |   &  |   *  |   |  | Enter|
+ * |     |      |      |      |      |           |      |      |      |      |      |
+ * |-----+------+------+------+------|           |------+------+------+------+------+
+ * |     |      |      |      |      |           |      |      |      |      |      |
+ * | Tab |   `  |   "  |   =  |   '  |           |   \  |   {  |   }  |   ;  | Bkspc|
+ * |     |      |      |      |      |           |      |      |      |      |      |
+ * |-----+------+------+------+------|           |------+------+------+------+------+
+ * |     |      |      |      | VS   |           |      |      |      |      |      |
+ * |  ~  | ctrl | ctrl | ctrl | Code |           |   [  |   (  |   )  |   ]  |  L3  |
+ * |     |  z   |  c   |   v  |sidebr|           |      |      |      |      |      |
+ * `-----+------+------+------+------|           |-------+------+------+------+------'
+ *                       ,-------------.       ,---------------.
+ *                       |  L0  | Shift|       | Alt  |   L2   |
+ *                       |------|------|       |------+--------+
+ */
   [1] = LAYOUT(
   //---------------------------------------------------------------------------------------       ----------------------------------------------------------------------------------
-    KC_ESCAPE,  KC_AT    ,  KC_HASH   ,TD(DANCE_31)              ,KC_PERC    ,KC_CIRC    ,KC_AMPR   ,KC_ASTR   ,TD(PIPE_END) ,KC_BSPC ,
+    KC_ESCAPE,  KC_AT    ,  KC_HASH   ,TD(DANCE_31)              ,KC_PERC    ,KC_CIRC    ,KC_AMPR   ,KC_ASTR   ,TD(PIPE_END) , KC_ENTER ,
   //----------------------------------------------------------------------------       ----------------------------------------------------------------------------------
-    KC_TAB, KC_GRAVE,  KC_DQUO, KC_EQL, TD(DANCE_32)       ,TD(BKSL_HME),LSFT(KC_LBRC),LSFT(KC_RBRC),KC_SCOLON,  KC_ENTER   ,
+    KC_TAB, KC_GRAVE,  KC_DQUO, KC_EQL, TD(DANCE_32)       ,TD(BKSL_HME),LSFT(KC_LBRC),LSFT(KC_RBRC),KC_SCOLON, KC_BSPC ,
   //----------------------------------------------------------------------------       ----------------------------------------------------------------------------------
-     KC_TILD , KC_CUT, KC_COPY, KC_PASTE, LCTL(LSFT(KC_B)),              KC_LBRC     ,KC_LPRN   ,KC_RPRN   ,KC_RBRC   ,TO(3)   ,
+     KC_TILD , KC_CUT, KC_COPY, KC_PASTE, LCTL(LSFT(KC_B)),              KC_LBRC     ,KC_LPRN   ,KC_RPRN   , TD(DANCE_VIM_RIGHT_BRACKET)   ,TO(3)   ,
   //---------------------------------------------------------------------------------------       ----------------------------------------------------------------------------------
 		    					TO(0) ,OSM(MOD_LSFT),               KC_RALT      ,TO(2) 
   ), 
-
+/* Keymap 2: Number layer
+ *
+ * ,--------------------------------------------------.           ,--------------------------------------------------.
+ * |-----+------+------+------+------|           |------+------+------+------+------+
+ * |     |      |      |      |      |           |      |      |      |      |      |
+ * | Esc | play | prev | next |   _  |           |   -  |   7  |   8  |   9  | Enter|
+ * |     | pause| track| track|      |           |      |      |      |      |      |
+ * |-----+------+------+------+------|           |------+------+------+------+------+
+ * |     |      |      |      |      |           |      |      |      |      |      |
+ * | Tab |   /  | Vol  | Vol  |  +   |           |   =  |   4  |   5  |   6  | Bkspc|
+ * |     |      | Down | Up   |      |           |      |      |      |      |      |
+ * |-----+------+------+------+------|           |------+------+------+------+------+
+ * |     |      |      |      |      |           |      |      |      |      |      |
+ * |Reset|  *   |bright|bright|  .   |           |   0  |   1  |   2  |   3  |  L3  |
+ * |     |      | down |  up  |      |           |      |      |      |      |      |
+ * `-----+------+------+------+------|           |-------+------+------+------+------'
+ *                       ,-------------.       ,---------------.
+ *                       |  L0  | Shift|       | Alt  |   L2   |
+ *                       |------|------|       |------+--------+
+ */
   [2] = LAYOUT(
   //---------------------------------------------------------------------------------------       ----------------------------------------------------------------------------------
-   KC_ESCAPE,      KC_MEDIA_PLAY_PAUSE,KC_MEDIA_PREV_TRACK,KC_MEDIA_NEXT_TRACK,LSFT(KC_MINS),KC_MINS,   KC_7,  KC_8, KC_9,KC_TRANSPARENT,
+   KC_ESCAPE,      KC_MEDIA_PLAY_PAUSE,KC_MEDIA_PREV_TRACK,KC_MEDIA_NEXT_TRACK,LSFT(KC_MINS),KC_MINS,   KC_7,  KC_8, KC_9,KC_ENTER,
   //---------------------------------------------------------------------------------------       ----------------------------------------------------------------------------------
-    KC_TAB,  KC_SLSH, KC_AUDIO_VOL_DOWN,KC_AUDIO_VOL_UP,LSFT(KC_EQL),   KC_EQL,   KC_4, KC_5, KC_6,   KC_ENTER,
+    KC_TAB,  KC_SLSH, KC_AUDIO_VOL_DOWN,KC_AUDIO_VOL_UP,LSFT(KC_EQL),   KC_EQL,   KC_4, KC_5, KC_6,  KC_TRANSPARENT ,
   //---------------------------------------------------------------------------------------       ----------------------------------------------------------------------------------
     RESET,   KC_KP_ASTERISK, KC_BRIGHTNESS_DOWN,KC_BRIGHTNESS_UP,KC_KP_DOT,   KC_0,   KC_1, KC_2, KC_3,   KC_TRANSPARENT,
   //---------------------------------------------------------------------------------------       ----------------------------------------------------------------------------------
-	  TO(0), KC_LGUI,KC_RALT ,TO(2)
+	  TO(0), KC_LGUI,KC_RALT ,TO(1)
   ),
-
+/* Keymap 3: Arrow key layer
+ *
+ * ,--------------------------------------------------.           ,--------------------------------------------------.
+ * |-----+------+------+------+------|           |------+------+------+------+------+
+ * |     |      |      |      |      |           |      |      |      |      |      |
+ * |     |      |      |      |      |           |      |      |  Up  |      |      |
+ * |     |      |      |      |      |           |      |      |      |      |      |
+ * |-----+------+------+------+------|           |------+------+------+------+------+
+ * |     |      |      |      |      |           |      |      |      |      |      |
+ * |     |      |      |      |      |           |      | Left | Down | Right|      |
+ * |     |      |      |      |      |           |      |      |      |      |      |
+ * |-----+------+------+------+------|           |------+------+------+------+------+
+ * |     |      |      |      |      |           |      |      |      |      |      |
+ * |     |      |      |      |      |           |      |      |      |      |      |
+ * |     |      |      |      |      |           |      |      |      |      |      |
+ * `-----+------+------+------+------|           |-------+------+------+------+------'
+ *                       ,-------------.       ,---------------.
+ *                       |  L0  | Win  |       | Alt  |   L1   |
+ *                       |------|------|       |------+--------+
+ */
   [3] = LAYOUT(
-      TD(DANCE_54),   KC_MS_WH_LEFT,  KC_MS_UP,       KC_MS_WH_RIGHT, TD(DANCE_55), LGUI(KC_LBRACKET),LCTL(LSFT(KC_TAB)),RCTL(KC_TAB),   LGUI(KC_RBRACKET),KC_TRANSPARENT, 
+      TD(DANCE_54),   KC_MS_WH_LEFT,  KC_MS_UP,       KC_MS_WH_RIGHT, TD(DANCE_55), LGUI(KC_LBRACKET),LCTL(LSFT(KC_TAB)), KC_UP,  LGUI(KC_RBRACKET), KC_ENTER , 
   //---------------------------------------------------------------------------------------       ----------------------------------------------------------------------------------
-	     TD(DANCE_56),   KC_MS_LEFT,     KC_MS_DOWN,     KC_MS_RIGHT,    MT(MOD_LGUI,KC_DEL),    TD(DANCE_60),   MT(MOD_RGUI,KC_DOWN), MT(MOD_RALT,KC_UP),   TD(DANCE_63),   KC_ENTER,     
+	     TD(DANCE_57),   KC_MS_LEFT,     KC_MS_DOWN,     KC_MS_RIGHT,    MT(MOD_LGUI,KC_DEL),    KC_TRANSPARENT, KC_LEFT,   KC_DOWN,   KC_RIGHT,KC_TRANSPARENT ,     
   //---------------------------------------------------------------------------------------       ----------------------------------------------------------------------------------
-     TD(DANCE_58),   KC_MS_BTN2,     KC_MS_WH_UP,    KC_MS_WH_DOWN, KC_TRANSPARENT, KC_MS_BTN1,     KC_MS_ACCEL0,   KC_MS_ACCEL1,   KC_MS_ACCEL2,   KC_NO, 
+     TD(DANCE_58),   KC_MS_BTN2,     KC_MS_WH_UP,    KC_MS_WH_DOWN, KC_TRANSPARENT, KC_MS_BTN1,     KC_MS_ACCEL0,   KC_MS_ACCEL1,   KC_MS_ACCEL2, RCTL(KC_TAB), 
   //---------------------------------------------------------------------------------------       ----------------------------------------------------------------------------------
-                        TO(0),KC_TRANSPARENT,KC_RALT,                                   TO(1)
-  )
+                                                                 TO(0), LGUI(KC_LSFT),                       MOD_LGUI, TO(1)
+  ) 
 };
 
 
@@ -397,6 +473,54 @@ void dance_paste_reset(qk_tap_dance_state_t *state, void *user_data) {
 	dance_state.step = 0;
 }
 
+
+void on_dance_vim_right_bracket(qk_tap_dance_state_t *state, void *user_data);
+uint8_t dance_vim_right_bracket_dance_step(qk_tap_dance_state_t *state);
+void dance_vim_right_bracket_finished(qk_tap_dance_state_t *state, void *user_data);
+void dance_vim_right_bracket_reset(qk_tap_dance_state_t *state, void *user_data);
+
+void on_dance_vim_right_bracket(qk_tap_dance_state_t *state, void *user_data) {
+	if(state->count == 3) {
+		tap_code16(KC_RBRC);
+		tap_code16(KC_RBRC);
+		tap_code16(KC_RBRC);
+	}
+	if(state->count > 3) {
+		tap_code16(KC_RBRC);
+	}
+}
+
+uint8_t dance_vim_right_bracket_dance_step(qk_tap_dance_state_t *state) {
+	if (state->count == 1) {
+		if (state->interrupted || !state->pressed) return SINGLE_TAP;
+		else return SINGLE_HOLD;
+	} else if (state->count == 2) {
+		if (state->interrupted) return DOUBLE_SINGLE_TAP;
+		else if (state->pressed) return DOUBLE_HOLD;
+		else return DOUBLE_TAP;
+	}
+	return MORE_TAPS;
+}
+void dance_vim_right_bracket_finished(qk_tap_dance_state_t *state, void *user_data) {
+	dance_state.step = dance_vim_right_bracket_dance_step(state);
+	switch (dance_state.step) {
+		case SINGLE_TAP: register_code16(KC_RBRC); break;
+		case SINGLE_HOLD: register_code16(LCTL(KC_RBRC)); break;
+		case DOUBLE_TAP: register_code16(KC_RBRC); register_code16(KC_RBRC); break;
+		case DOUBLE_SINGLE_TAP: tap_code16(KC_RBRC); register_code16(KC_RBRC);
+	}
+}
+
+void dance_vim_right_bracket_reset(qk_tap_dance_state_t *state, void *user_data) {
+	wait_ms(10);
+	switch (dance_state.step) {
+		case SINGLE_TAP: unregister_code16(KC_RBRC); break;
+		case SINGLE_HOLD: unregister_code16(LCTL(KC_RBRC)); break;
+		case DOUBLE_TAP: unregister_code16(KC_RBRC); break;
+		case DOUBLE_SINGLE_TAP: unregister_code16(KC_RBRC); break;
+	}
+	dance_state.step = 0;
+}
 
 
 
@@ -1064,6 +1188,10 @@ qk_tap_dance_action_t tap_dance_actions[] = {
         [DANCE_1] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_1, dance_1_finished, dance_1_reset),
         [DANCE_2] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_2, dance_2_finished, dance_2_reset),
         [DANCE_3] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_3, dance_3_finished, dance_3_reset),
+        [DANCE_VS_CODE_SIDEBAR] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_vs_code_sidebar, dance_vs_code_sidebar_finished, dance_vs_code_sidebar_reset),
+        [DANCE_COPY] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_copy, dance_copy_finished, dance_copy_reset),
+        [DANCE_PASTE] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_paste, dance_paste_finished, dance_paste_reset),
+        [DANCE_VIM_RIGHT_BRACKET] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_vim_right_bracket, dance_vim_right_bracket_finished, dance_vim_right_bracket_reset),
         [DANCE_15] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_15, dance_15_finished, dance_15_reset),
         [DANCE_31] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_31, dance_31_finished, dance_31_reset),
         [DANCE_32] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_32, dance_32_finished, dance_32_reset),
@@ -1073,8 +1201,6 @@ qk_tap_dance_action_t tap_dance_actions[] = {
         [DANCE_56] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_56, dance_56_finished, dance_56_reset),
         [DANCE_57] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_57, dance_57_finished, dance_57_reset),
         [DANCE_58] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_58, dance_58_finished, dance_58_reset),
-        [DANCE_59] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_59, dance_59_finished, dance_59_reset),
-        [DANCE_60] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_60, dance_60_finished, dance_60_reset),
         [DANCE_63] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_63, dance_63_finished, dance_63_reset),
         [BKSL_HME] = ACTION_TAP_DANCE_FN_ADVANCED(on_bksl_hme, bksl_hme_finished, bksl_hme_reset),
         [PIPE_END] = ACTION_TAP_DANCE_FN_ADVANCED(on_pipe_end, pipe_end_finished, pipe_end_reset),
