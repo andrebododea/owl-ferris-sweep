@@ -1,18 +1,16 @@
 # Owl Ferris Sweep
 
-TODO: Re-size all the massive photos to not be as obnoxiously large.
-
 This is a custom-made minimalist keyboard that I have built that aims to provide the following features:
 - Ergonomic keymap that allows the user to not move their hands or stretch to reach positions
 - Aggressive pinky stagger, to promote a neutral hand position
-- Aggressive (50 degree) tenting angle to put the wrist in as neutral of a position as possible
-- Modular - circuit board, base, key switches, and microcontroller can all be swapped around and iterated on as necessary without needing to build a brand new board
+- Aggressive (50 degree) tenting angle to put the wrist in a much more neutral position than any commercial keyboard allows (and also much more aggressive than almost all custom keboards I came across during my research)
+- Modular build - circuit board, base, key switches, and microcontroller can all be cheaply swapped around and iterated on as necessary without needing to build a brand new keyboard.
 
 
 
 Here is the finished product without the base. Full image with both, and with base attached, coming soon. 
 
-<img src="https://user-images.githubusercontent.com/9446419/156084562-7c997dc5-48c9-49e0-af60-a174a4595a0c.jpg" width="600">
+<img src="https://user-images.githubusercontent.com/9446419/156084562-7c997dc5-48c9-49e0-af60-a174a4595a0c.jpg" width="300">
 
 
 ## Background
@@ -20,23 +18,29 @@ This is a fork of the [Ferris Sweep project](https://github.com/davidphilipbarr/
 
 The main difference I've made here is that I've pulled the Sweep 2.1 version of the board, I've deleted the old silkscreen artwork, and I've added in some owl artwork.
 
-<img src="https://user-images.githubusercontent.com/9446419/143318466-0a3d0682-bb64-4945-b8ab-bbbacb69f23f.png" width="800">
+<img src="https://user-images.githubusercontent.com/9446419/143318466-0a3d0682-bb64-4945-b8ab-bbbacb69f23f.png" width="400"> <img src="https://user-images.githubusercontent.com/9446419/143318504-2994da0f-68e2-45f8-aefe-fd5e40d8b8bf.png" width="400">
 
-<img src="https://user-images.githubusercontent.com/9446419/143318504-2994da0f-68e2-45f8-aefe-fd5e40d8b8bf.png" width="800">
-
-The QMK keymap and configuration is heavily based on [Ben Vallack's 34 key Ferris Sweep layout](https://github.com/benvallack/34-QMK-Ferris-Sweep), with some light modifications. 
-
-As you can probably tell by now, my motivation to build this was heavily inspired by Ben Vallack and his video on the [Ferris Sweep](https://www.youtube.com/watch?v=JqpBKuEVinw) build he made, as well as his videos on various keyboard layouts for 40% keyboards. Build instructions for a similar version of this keyboard can be found [here](https://www.youtube.com/watch?v=fBPu7AyDtkM_).
+The QMK keymap and configuration is heavily based on [Ben Vallack's 34 key Ferris Sweep layout](https://github.com/benvallack/34-QMK-Ferris-Sweep), with some light modifications.  My motivation to build this keyboard was heavily inspired by Ben Vallack's [Ferris Sweep](https://www.youtube.com/watch?v=JqpBKuEVinw) build, as well as his videos on various keyboard layouts for 40% keyboards. Build instructions for a similar version of this keyboard can be found [here](https://www.youtube.com/watch?v=fBPu7AyDtkM_).
 
 ## Base design
-I designed a base that has a tenting angle of 50 degrees. The base is the exact same for each side aside from being mirrored, and is designed to be 3D printed and then attached to the circuit board via 4x M2 heat set inserts inserted into the base and then attached to four M2 sized holes on the PCB.
+I designed a base that has a tenting angle of 50 degrees. The base is the exact same for each side (the are just mirrored), and is designed to be 3D printed and then attached to the circuit board via 4x M2 heat set inserts inserted into the base and then attached to four M2 screw sized holes on the PCB.
 
-<img src="https://user-images.githubusercontent.com/9446419/153913472-b125c9d9-91c1-4504-bf43-197d8bf727ab.png" width="800">
+<img src="https://user-images.githubusercontent.com/9446419/153913472-b125c9d9-91c1-4504-bf43-197d8bf727ab.png" width="400">
 
 Here is a study I did where I took a Kinesis Freestyle Pro, propped up to a tenting angle of 50 degrees. You can see the finished product next to the Kinesis, and the advantages of the newly designed keyboard should be clear. When aggressively tenting, a smaller keyboard creates a much smaller desktop footprint than a large keyboard such as the Kinesis.
 
-<< INSERT COMPARISON AGAINST TENTED KINESIS KEYBOARD >>
+TODO: INSERT COMPARISON AGAINST TENTED KINESIS KEYBOARD
 
+## Keymap
+This keyboard uses the QMK project for the keboard's firmware. I wrote a custom keymap, however there is a default keymap that can be used for any Ferris or Ferris-offshoot keyboards included in the QMK project by default.
+
+The procedure for re-flashing the keyboard with new firmware (which must be done any time the QMK keymap is changed) is to put the keyboard into a reset state and then use the QMK flash command.
+1) Connect the keyboard to your PC.
+2) Press the reset button (which is mapped to the keyboard's Layer 2 bottom-left most pinkey key) OR simply short the master Arduino's reset and ground pins together as shown in this diagram
+<img src="https://user-images.githubusercontent.com/9446419/159301616-7d147aae-19a7-4722-9c3e-0f31a73177a2.png" width="200">
+3) In a terminal on the connected PC, run the command `qmk flash`
+
+TODO: QMK keymap incoming
 
 ## PCB Build 
 
@@ -59,14 +63,4 @@ Flashed the Elite-C arduino clones with QMK firmware, and then soldered it onto 
 
 Once the base was printed I aligned the circuit board on the 3D printed base, and marked where the four holes are for the M2 screws. Pushed the heat set inserts into the base where the markings were, and then attached the circuit board to the base via the four M2 screws.
 
-## Keymap
-This keyboard just uses QMK for the firmware on the board. I wrote a custom keymap, however there is a default keymap that can be used for this keboard
-
-The procedure for re-flashing the keyboard with new firmware (which must be done any time the QMK keymap is desired to be changed) is to put the keyboard into a reset state and then use the QMK flash commend. So to enumerate these:
-1) Connect the keyboard to your PC.
-2) Press the reset button (which is mapped to the keyboard's Layer 2 bottom-left most pinkey key) OR simply short the master Arduino's reset and ground pins together as shown in this diagram
-<img src="https://user-images.githubusercontent.com/9446419/159301616-7d147aae-19a7-4722-9c3e-0f31a73177a2.png" width="800">
-3) In a terminal on the connected PC, run the command `qmk flash`
-
-TODO: QMK keymap incoming
 
